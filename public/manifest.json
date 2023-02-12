@@ -1,0 +1,21 @@
+{
+  "short_name": "Frontend client",
+  "name": "Frontend client",
+  "icons": [
+    {
+      "src": "/img/icons/manifest-icon-192.maskable.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/icons/manifest-icon-512.maskable.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?utm_source=a2hs",
+  "background_color": "#161923",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#8257e5"
+}

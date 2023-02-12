@@ -1,0 +1,7 @@
+{
+  "appname": "Frontend Client",
+  "messages": {
+    "internal_error_title": "Erro interno.",
+    "internal_error_msg": "Um erro inesperado ocorreu! Entre em contato com algum administrador do App."
+  }
+}
