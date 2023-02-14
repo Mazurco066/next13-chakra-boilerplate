@@ -1,0 +1,17 @@
+{
+  "form": {
+    "user_label": "Username",
+    "user_hint": "Type your app username.",
+    "password_label": "Password",
+    "password_hint": "Type your password.",
+    "forgot_password": "Forgot my password",
+    "button": "Login",
+    "no_account": "Dont have an account? ",
+    "create_account": "Sign Up!"
+  },
+  "messages": {
+    "incorrect_login_title": "Invalid authentication.",
+    "incorrect_login_msg": "Incorrect user or password.",
+    "required_field_msg": "Required field."
+  }
+}

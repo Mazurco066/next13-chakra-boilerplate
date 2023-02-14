@@ -1,0 +1,17 @@
+{
+  "form": {
+    "user_label": "Usuário",
+    "user_hint": "Digite seu usuário dentro do app.",
+    "password_label": "Senha",
+    "password_hint": "Digite sua senha.",
+    "forgot_password": "Esqueci minha senha",
+    "button": "Acessar",
+    "no_account": "Não possui conta? ",
+    "create_account": "Criar uma agora!"
+  },
+  "messages": {
+    "incorrect_login_title": "Autenticação inválida.",
+    "incorrect_login_msg": "Usuário ou senha incorreto(s).",
+    "required_field_msg": "Esse campo é requerido."
+  }
+}

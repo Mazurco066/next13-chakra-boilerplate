@@ -1,19 +1,23 @@
 // Dependencies
-import axios from 'axios'
-import { useRouter } from 'next/router'
+import Router from 'next/router'
 import { useEffect } from 'react'
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useMutation } from '@tanstack/react-query'
+import { requestClient } from '@/infra/services'
 
 // Session user hook
-export default function useUser({
+export function useUser({
   redirectTo = '',
   redirectIfFound = false
 } = {}) {
-  const router = useRouter()
+  // User fetching from app server
   const { data: user } = useQuery(['user'], async () => {
-    const response = await axios.get("/api/user");
-    return response.data;
-  });
+    const response = await requestClient('/api/user', 'get', undefined, {
+      headers: {
+        'Content-Type': 'Application/json'
+      }
+    })
+    return response.data
+  })
 
   useEffect(() => {
     // No need to redirect if there is no redirect url
@@ -21,11 +25,15 @@ export default function useUser({
 
     // Rediret to defined page if user is logged in
     if (
-      (redirectTo && !redirectIfFound && !user?.data.isLoggedIn) ||
-      (redirectIfFound && user?.data.isLoggedIn)
+      (redirectTo && !redirectIfFound && !user?.isLoggedIn) ||
+      (redirectIfFound && user?.isLoggedIn)
     ) {
-      router.push(redirectTo)
+      Router.push(redirectTo)
     }
 
   }, [user, redirectIfFound, redirectTo])
+
+  return {
+    user: user?.data
+  }
 }

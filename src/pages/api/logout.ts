@@ -6,7 +6,16 @@ import { sessionOptions } from '@/infra/services'
 // Logout using iron session route
 function logoutRoute(req: NextApiRequest, res: NextApiResponse<any>) {
   req.session.destroy()
-  res.json({})
+  res.json({
+    isLoggedIn: false,
+    isEmailconfirmed: false,
+    name: '',
+    username: '',
+    avatar: '',
+    token: '',
+    email: '',
+    id: ''
+  })
 }
 
 // Exporting logout route

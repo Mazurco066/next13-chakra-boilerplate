@@ -1,4 +1,2 @@
-import useUser from './useUser'
 export * from './session'
-
-export { useUser }
+export * from './useUser'
