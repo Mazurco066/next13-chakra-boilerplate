@@ -72,7 +72,7 @@ const LogInView: FC = () => {
   
   // View JSX
   return (
-    <Container maxWidth="6xl">
+    <Container maxWidth="6xl" pt="10">
       <Box p="5" borderRadius="lg" bg={bgBox}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormControl mb="5" isDisabled={isLoading}>

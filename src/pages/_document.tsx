@@ -13,7 +13,7 @@ class MyDocument extends Document<Props> {
   render () {
     const currentLocale = this.props.__NEXT_DATA__.locale ?? i18nextConfig.i18n.defaultLocale
     return (
-      <Html lang="en">
+      <Html lang={currentLocale}>
         <Head>
           <link rel="manifest" href="/manifest.json" />
           <link rel="apple-touch-startup-image" href="img/icons/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"></link>
