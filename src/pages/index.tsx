@@ -1,6 +1,11 @@
+// Dependencies
 import Head from 'next/head'
+import { ReactElement } from 'react'
 
-export default function Initial() {
+// Layouts
+import { GeneralLayout } from '@/presentation/ui/_layouts'
+
+function Initial() {
   return (
     <>
       <Head>
@@ -15,3 +20,14 @@ export default function Initial() {
     </>
   )
 }
+
+Initial.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <GeneralLayout>
+      {page}
+    </GeneralLayout>
+  )
+}
+
+
+export default Initial

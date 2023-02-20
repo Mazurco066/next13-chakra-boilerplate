@@ -1,5 +1,5 @@
 // Dependencies
-import type { AppProps } from 'next/app'
+import type { AppPropsWithLayout } from '@/domain/types'
 
 // React query service
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
@@ -15,11 +15,12 @@ import theme from '@/presentation/theme'
 const queryClient: QueryClient = new QueryClient()
 
 // App wrapper
-function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? ((page) => page)
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme} cssVarsRoot="body">
-        <Component {...pageProps} />
+        { getLayout(<Component {...pageProps} />) }
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       </ChakraProvider>
     </QueryClientProvider>
